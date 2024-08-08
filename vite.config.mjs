@@ -11,6 +11,14 @@ import Vuetify, {transformAssetUrls} from 'vite-plugin-vuetify'
 import {defineConfig} from 'vite'
 import {fileURLToPath, URL} from 'node:url'
 
+// ... URL ...
+
+// const cloud_url = 'http://110.42.103.198:22440'
+const buaa_url = 'http://172.27.250.68:8080'
+
+// ... ...
+
+
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
@@ -65,32 +73,34 @@ export default defineConfig({
     },
     server: {
         // -----------local debug use -----------
-        port: 8001,
+        // port: 8001,
 
         // ----------- Docker image use ----------
-        // watch: {
-        //     usePolling: true,
-        // },
-        // host: true, // Here
-        // strictPort: true,
-        // port: 9050,
+
+        // ---------------------------------------
+        watch: {
+            usePolling: true,
+        },
+        host: true,
+        strictPort: true,
+        port: 9051,
         proxy: {
-            // 在此处编写代理规则
+            // cross-origin configs
             '/v1': {
-                target: 'http://110.42.103.198:22440',
+                target: buaa_url,
                 changeOrigin: true,
                 rewrite: (path) => {
                     return path.replace(/^\/v1/, '')
                 }
             },
             '/generate-pdf': {
-                target: 'http://110.42.103.198:22440',
+                target: buaa_url,
                 changeOrigin: true,
                 rewrite: (path) => {
                     return path.replace(/^\/generate-pdf/, '');
                 },
             },
         }
-        
+
     }
 })

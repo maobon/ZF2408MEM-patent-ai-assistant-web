@@ -88,12 +88,13 @@
 <script setup>
 import {onMounted, ref} from "vue";
 import {report_delete, report_list} from '@/api/api'
+import configs from "@/utils/configs";
 
 const headers = [
-  { title: '报告ID', key: 'id', align: 'center', width: '10%' },
-  { title: '报告名称', key: 'title', align: 'center', width: '45%' },
-  { title: '最后更新', key: 'update_time', align: 'center',  width: '20%'  },
-  { title: '操作', key: 'actions', sortable: false, align: "center", width: '25%' },
+  {title: '报告ID', key: 'id', align: 'center', width: '10%'},
+  {title: '报告名称', key: 'title', align: 'center', width: '45%'},
+  {title: '最后更新', key: 'update_time', align: 'center', width: '20%'},
+  {title: '操作', key: 'actions', sortable: false, align: "center", width: '25%'},
 ];
 
 const listdata = ref([]);
@@ -128,7 +129,7 @@ const report_delete_fn = async () => {
 
 const generate_pdf_fn = async (item) => {
 
-  fetch('http://110.42.103.198:22440/generate-pdf', {
+  fetch(configs.getBuaaBackendServerURL() + '/generate-pdf', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -188,11 +189,12 @@ export default {
 </script>
 
 <style>
-.table-header th span{
-  font-weight: bolder!important;
-} 
+.table-header th span {
+  font-weight: bolder !important;
+}
+
 .table-header th {
-  background-color:rgb(250, 250, 250);
+  background-color: rgb(250, 250, 250);
 }
 </style>
 

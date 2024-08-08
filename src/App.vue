@@ -9,8 +9,18 @@
 
   </v-app>
   <div v-if="!robotShow" class="rot-box">
+
+    <!-- AI Chat Bot on Page -->
+    <!-- Cloud -->
+    <!--
     <iframe src="http://110.42.103.198:23837/chat/WaEyr1EZES5ujXrS" frameborder="0" allow="microphone">
     </iframe>
+    -->
+
+    <!-- BeiHang -->
+    <iframe src="http://172.27.250.68:8888/chat/0MsugDtNcvvq0YCM" frameborder="0" allow="microphone">
+    </iframe>
+
     <a href="/record" class="link">我的报告 ></a>
     <span class="close" @click="toggle">关闭</span>
   </div>
