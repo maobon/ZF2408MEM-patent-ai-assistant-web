@@ -1,25 +1,19 @@
 export default {
-  // Cloud
-  // BASE_CLOUD_URL: 'http://110.42.103.198',
-  // BASE_CLOUD_PORT: '22440',
 
-  // BeiHang
-  BASE_BUAA_URL: 'http://172.27.250.68',
-  BASE_BUAA_PORT: '8080',
+  // Backend Server URL
+  BASE_URL: 'http://172.27.112.3',
+  BASE_PORT: '8080',
 
-  // getCloudBackendServerURL() {
-  //   return this.BASE_CLOUD_URL + ":" + this.BASE_CLOUD_PORT
-  // },
-
-  getBuaaBackendServerURL() {
-    return this.BASE_BUAA_URL + ":" + this.BASE_BUAA_PORT
+  getBackendServerURL() {
+    return this.BASE_URL + ":" + this.BASE_PORT
   },
 
-  // real time generate text of report
-  // DIFY_REAL_TIME_GEN_TEXT_CLOUD_URL: 'http://110.42.103.198:23837/v1/chat-messages',
-  // DIFY_REAL_TIME_GEN_TEXT_CLOUD_API_KEY: 'app-XOm1EyPKw2EfeWS1vM5xC7bf',
+  // Backend Dify
+  DIFY_REALTIME_TEXT_GENERATOR_PORT: '8888',
 
-  DIFY_REAL_TIME_GEN_TEXT_BUAA_URL: "http://172.27.250.68:8888/v1/chat-messages",
-  DIFY_REAL_TIME_GEN_TEXT_BUAA_API_KEY: 'app-FX3v1wWhCC2OtgFEUQXCb7fi',
+  getRealTimeTextGeneratorWorkflowURL() {
+    return this.BASE_URL + ":" + this.DIFY_REALTIME_TEXT_GENERATOR_PORT + "/v1/chat-messages"
+  },
 
+  DIFY_REALTIME_GEN_TEXT_API_KEY: 'app-guq5xRECgZ1CRU07TGunLicn',
 }

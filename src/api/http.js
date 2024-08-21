@@ -7,7 +7,7 @@ import axios from 'axios'
 import configs from "@/utils/configs";
 
 const request = axios.create({
-  baseURL: configs.getBuaaBackendServerURL(),
+  baseURL: configs.getBackendServerURL(),
   timeout: 150 * 1000, // request Message
 });
 

@@ -63,7 +63,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import {onMounted, ref} from "vue";
 import router from '@/router'
 
 // const select = ref({ state: '技术背景和目标', abbr: 'patent_trend1' });

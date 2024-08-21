@@ -11,13 +11,8 @@ import Vuetify, {transformAssetUrls} from 'vite-plugin-vuetify'
 import {defineConfig} from 'vite'
 import {fileURLToPath, URL} from 'node:url'
 
-// ... URL ...
-
-// const cloud_url = 'http://110.42.103.198:22440'
-const buaa_url = 'http://172.27.250.68:8080'
-
-// ... ...
-
+// backend URL
+const backendUrl = 'http://172.27.112.3:8080'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -87,14 +82,14 @@ export default defineConfig({
         proxy: {
             // cross-origin configs
             '/v1': {
-                target: buaa_url,
+                target: backendUrl,
                 changeOrigin: true,
                 rewrite: (path) => {
                     return path.replace(/^\/v1/, '')
                 }
             },
             '/generate-pdf': {
-                target: buaa_url,
+                target: backendUrl,
                 changeOrigin: true,
                 rewrite: (path) => {
                     return path.replace(/^\/generate-pdf/, '');

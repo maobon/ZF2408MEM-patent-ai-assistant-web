@@ -5,7 +5,6 @@
  */
 
 import {createRouter, createWebHistory} from 'vue-router' // do not use auto router
-
 // index - 搜索报告
 import searchPage from "@/pages/SearchPage.vue";
 

@@ -129,7 +129,7 @@ const report_delete_fn = async () => {
 
 const generate_pdf_fn = async (item) => {
 
-  fetch(configs.getBuaaBackendServerURL() + '/generate-pdf', {
+  fetch(configs.getBackendServerURL() + '/generate-pdf', {
     method: 'POST',
     mode: 'cors',
     headers: {

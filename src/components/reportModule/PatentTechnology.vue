@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { defineProps, watch, ref } from 'vue';
+import {defineProps, ref, watch} from 'vue';
 import * as echarts from "echarts";
 import sseFetch from '/src/api/sseFetch';
 import Loading from './Loading.vue';

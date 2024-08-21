@@ -4,8 +4,8 @@ import configs from "@/utils/configs";
 const sseFetch = (fetchData, callback) => {
 
   // configs
-  const url = configs.DIFY_REAL_TIME_GEN_TEXT_BUAA_URL
-  const apiKey = configs.DIFY_REAL_TIME_GEN_TEXT_BUAA_API_KEY
+  const url = configs.getRealTimeTextGeneratorWorkflowURL()
+  const apiKey = configs.DIFY_REALTIME_GEN_TEXT_API_KEY
 
   const ctrl = new AbortController();
 
@@ -101,15 +101,6 @@ const sseFetch = (fetchData, callback) => {
   //         }
   //     }
   // });
-}
-
-function extractJSON(str) {
-  const regex = /@@@DataType:[^\s]+\s*(\{.*?\}|\[.*?\])\s*@@@End\s+temp/;
-  const match = str.match(regex);
-  if (match && match[1]) {
-    return JSON.parse(match[1]);
-  }
-  return null;
 }
 
 export default sseFetch;

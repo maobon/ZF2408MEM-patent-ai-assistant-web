@@ -501,7 +501,7 @@
     chart_bbb.setOption(option_bbb);
     //==============================================================
 
-    const base_url = configs.getBuaaBackendServerURL()
+    const base_url = configs.getBackendServerURL()
 
     $.post(base_url + '/v1/report/detail', {id: '1'}, function (res) {
         console.log(res)

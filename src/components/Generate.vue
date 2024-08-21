@@ -200,7 +200,7 @@ if (query.message) {
 
 const generate_pdf_fn = async () => {
 
-  fetch(configs.getBuaaBackendServerURL() + '/generate-pdf', {
+  fetch(configs.getBackendServerURL() + '/generate-pdf', {
     method: 'POST',
     mode: 'cors',
     headers: {
